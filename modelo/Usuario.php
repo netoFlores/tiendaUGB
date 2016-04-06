@@ -148,11 +148,11 @@ class Usuario {
             return $execute->fetch(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
-        }  finally {
-             $this->conn->close();
+        } finally {
+            $this->conn->close();
         }
     }
-    
+
     public function findAll() {
         try {
             $query = "SELECT * FROM usuario";
@@ -161,9 +161,26 @@ class Usuario {
             return $execute->fetch(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
-        }  finally {
-             $this->conn->close();
+        } finally {
+            $this->conn->close();
         }
     }
-
+    
+    
+    public function login(){
+        try {
+            $query = "SELECT idUsuario, nombre, apellido FROM usuario WHERE usuario = ? AND clave = ?";
+            $execute = $this->conn->prepare($query);
+            $execute->bindParam(1, $this->usuario, PDO::PARAM_STR);
+            $execute->bindPARAM(2, $this->clave, PDO::PARAM_STR);
+            $execute->execute();
+            if($execute->columnCount() > 0){
+                return $execute->fetch(PDO::FETCH_OBJ);
+            }
+            return null;
+        } catch (PDOException $ex) {
+            echo $ex->getMessage();
+        }
+    }
+    
 }
