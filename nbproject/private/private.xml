@@ -5,7 +5,13 @@
         <group name="JavaProject">
             <file>file:/home/neto/webprod/tienda/login.php</file>
             <file>file:/home/neto/webprod/tienda/index.php</file>
+            <file>file:/home/neto/webprod/tienda/modelo/Categoria.php</file>
+            <file>file:/home/neto/webprod/tienda/modelo/Conexion.php</file>
+            <file>file:/home/neto/webprod/tienda/modelo/Venta.php</file>
+            <file>file:/home/neto/webprod/tienda/modelo/DetalleVenta.php</file>
+            <file>file:/home/neto/webprod/tienda/modelo/Producto.php</file>
             <file>file:/home/neto/webprod/tienda/admin/index.php</file>
+            <file>file:/home/neto/webprod/tienda/modelo/Usuario.php</file>
         </group>
     </open-files>
 </project-private>

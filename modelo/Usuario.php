@@ -145,7 +145,7 @@ class Usuario {
             $execute = $this->conn->prepare($query);
             $execute->bindParam(1, $this->idUsuario, PDO::PARAM_INT);
             $execute->execute();
-            return $execute->fetch(PDO::FETCH_OBJ);
+            return $execute->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         }  finally {

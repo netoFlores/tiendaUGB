@@ -96,6 +96,7 @@ class Categoria {
             $execute = $this->conn->prepare($query);
             $execute->bindParam(1, $this->idCategoria, PDO::PARAM_INT);
             $execute->execute();
+            $this->conn->close();
             return $execute->fetch(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
@@ -109,7 +110,8 @@ class Categoria {
             $query = "SELECT * FROM categoria";
             $execute = $this->conn->prepare($query);
             $execute->execute();
-            return $execute->fetch(PDO::FETCH_OBJ);
+            $this->conn->close();
+            return $execute->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         } finally {

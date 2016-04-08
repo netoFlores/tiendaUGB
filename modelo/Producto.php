@@ -129,7 +129,7 @@ class Producto {
             $query = "SELECT * FROM producto";
             $execute = $this->conn->prepare($query);
             $execute->execute();
-            return $execute->fetch(PDO::FETCH_OBJ);
+            return $execute->fetchAll(PDO::FETCH_OBJ);
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         } finally {
