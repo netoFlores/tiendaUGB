@@ -50,7 +50,7 @@ class Categoria {
 
     public function add() {
         try {
-            $query = "INSERT INTO categoria(nombre,descripcion) values (?,?)";
+            $query = "INSERT INTO categoria(nombre,descripcion, fecha_creacion) values (?,?,now())";
             $execute = $this->conn->prepare($query);
             $execute->bindParam(1, $this->nombre, PDO::PARAM_STR);
             $execute->bindParam(2, $this->descripcion, PDO::PARAM_STR);
