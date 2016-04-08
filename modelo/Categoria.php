@@ -55,6 +55,9 @@ class Categoria {
             $execute->bindParam(1, $this->nombre, PDO::PARAM_STR);
             $execute->bindParam(2, $this->descripcion, PDO::PARAM_STR);
             $execute->execute();
+            echo $this->nombre;
+            echo $this->descripcion;
+            echo "exito";
         } catch (PDOException $ex) {
             echo $ex->getMessage();
         } finally {
