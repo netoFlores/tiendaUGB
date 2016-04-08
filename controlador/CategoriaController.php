@@ -48,12 +48,10 @@ class CategoriaC{
 }
 
 
-if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["nuevo"])){
-    $nombre = $_POST["nombre"];
-    $desc = $_POST["descripcion"];
-    $ct = new CategoriaC();
-    $ct->add($nombre, $desc);
-    //header("Location: ../admin/index.php");
-}else{
-    echo "No hay datos";
-}
+//if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["nuevo"])){
+//    $nombre = $_POST["nombre"];
+//    $desc = $_POST["descripcion"];
+//    $ct = new CategoriaC();
+//    $ct->add($nombre, $desc);
+//    //header("Location: ../admin/index.php");
+//}
